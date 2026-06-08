@@ -1,0 +1,33 @@
+# GCP Cloud Functions Studio
+
+This repository contains the target configuration and SRE runtime files compiled by the **GCP Cloud Functions Studio** dashboard module.
+
+## 🚀 Description
+Scaffold Google Cloud serverless triggers. Generate Node.js/Python functions, Pub/Sub trigger configurations, IAM access permissions, and deploy scripts.
+
+## 🛠️ Specification Matrix
+- **Primary Configuration File**: `/deploy/functions/main.py`
+- **Execution Command**: `gcloud functions deploy func --runtime python39 --trigger-http`
+- **Validation Command**: `gcloud functions describe func`
+
+## 📋 How to Run & Validate
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Pradeeptalari14/tp-gcp-cloud-functions.git
+   cd tp-gcp-cloud-functions
+   ```
+
+2. **Run Execution Target:**
+   ```bash
+   gcloud functions deploy func --runtime python39 --trigger-http
+   ```
+
+3. **Verify Runtime Stability:**
+   ```bash
+   gcloud functions describe func
+   ```
+
+## 🔐 Security & Best Practices
+* **Secret Isolation**: Use organization-level secrets (or SSM parameter hooks) rather than hardcoded environment variables inside files.
+* **Pull Request Lifecycles**: Protect default branch merges with validation checks before merging code changes.
